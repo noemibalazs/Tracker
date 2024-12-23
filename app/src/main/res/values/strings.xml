@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Tracker</string>
+
+    <string name="label_login">Login</string>
+    <string name="label_placeholder_email">Email address</string>
+    <string name="label_placeholder_password">Password</string>
+    <string name="label_placeholder_confirm_password">Confirm Password</string>
+    <string name="label_submit_login">Log In</string>
+    <string name="label_or">Or use</string>
+    <string name="label_register">Register</string>
+    <string name="label_invalid_email_address">Please enter a valid email address</string>
+    <string name="label_invalid_password">Password must contains at least one capital, one special character, one digit, and should be at least 8 character length.</string>
+    <string name="label_invalid_confirm_password">Passwords should be valid and must be equal</string>
+
+    <string name="label_google_button">Sign In with Google</string>
+    <string name="label_sign_up">Sign Up</string>
+
+    <string name="label_already_has_an_account">Or do you have an account?</string>
+
+    <string name="label_verification">Verification</string>
+    <string name="label_email_verification">Email verification</string>
+    <string name="label_verification_link">Verification link</string>
+    <string name="label_email_verification_sent">We have sent a verification link to</string>
+    <string name="label_didnt_receive_the_link">Didn\'t received the link?</string>
+    <string name="label_resend">Resend</string>
+
+    <string name="label_avatar">Avatar</string>
+    <string name="label_submit_sign_out">Sign Out</string>
+
+    <string name="label_reset_password">Reset password</string>
+    <string name="label_continue">Continue</string>
+    <string name="label_reset_your_password">Reset your password</string>
+
+    <string name="label_home">Home</string>
+    <string name="label_charts">Charts</string>
+
+    <string name="label_expense_type">Expense type</string>
+    <string name="label_reference_period_month">Month</string>
+    <string name="label_reference_period_year">Year</string>
+    <string name="label_expense_amount">Cost amount</string>
+    <string name="label_expense_currency">Currency</string>
+    <string name="label_placeholder_amount">0.0</string>
+    <string name="label_placeholder_document">12</string>
+    <string name="label_document_number">&#x2116;</string>
+    <string name="label_save">Save</string>
+
+    <string name="label_current_month_expenses">Current month expenses</string>
+    <string name="label_selected_month_expenses">Selected month expenses</string>
+    <string name="label_doc_number">&#x2116;: %s</string>
+    <string name="label_chart">Chart of %s %d</string>
+    <string name="label_chart_slice">%s - %s</string>
+</resources>
