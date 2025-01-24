@@ -71,13 +71,24 @@ import kotlin.math.atan2
 import kotlin.math.sqrt
 
 @Composable
-fun ProgressIndicator(size: Int, strokeWidth: Int, modifier: Modifier = Modifier) {
-    CircularProgressIndicator(
-        modifier = modifier.size(size.dp),
-        strokeWidth = strokeWidth.dp,
-        color = Color.Red,
-        trackColor = Color.Black
-    )
+fun ProgressIndicator(size: Int, strokeWidth: Int, modifier: Modifier = Modifier, alignmentChanged: Boolean = false) {
+    when (alignmentChanged) {
+        true -> Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            CircularProgressIndicator(
+                modifier = modifier.size(size.dp),
+                strokeWidth = strokeWidth.dp,
+                color = Color.Red,
+                trackColor = Color.Black
+            )
+        }
+
+        else -> CircularProgressIndicator(
+            modifier = modifier.size(size.dp),
+            strokeWidth = strokeWidth.dp,
+            color = Color.Red,
+            trackColor = Color.Black
+        )
+    }
 }
 
 @Composable

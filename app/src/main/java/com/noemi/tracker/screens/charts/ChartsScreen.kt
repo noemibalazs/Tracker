@@ -82,14 +82,15 @@ fun ChartsScreen(modifier: Modifier = Modifier) {
             .padding(bottom = 60.dp)
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Top
     ) {
 
         when (isLoadingCurrentPeriodDetails) {
-            true -> ProgressIndicator(size = 90, strokeWidth = 9)
+            true -> ProgressIndicator(size = 90, strokeWidth = 9, alignmentChanged = currentExpenses.isEmpty())
             else ->
                 LazyColumn(state = lazyState) {
-                    item {
+
+                    if (currentExpenses.isNotEmpty()) item {
                         SmallHeadlineText(
                             text = stringResource(id = R.string.label_current_month_expenses),
                             paddingStart = 20,

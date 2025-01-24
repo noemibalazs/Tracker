@@ -35,31 +35,31 @@ class ChartsViewModel @Inject constructor(
     private val expenseMonth = MutableSharedFlow<String>()
     private val expenseYear = MutableSharedFlow<Int>()
 
-    private var _currentPeriodExpenses = MutableStateFlow(mapOf<String, List<Expense>>())
+    private val _currentPeriodExpenses = MutableStateFlow(mapOf<String, List<Expense>>())
     val currentPeriodExpenses = _currentPeriodExpenses.asStateFlow()
 
-    private var _currentPeriodDataCharts = MutableStateFlow(emptyList<ChartData>())
+    private val _currentPeriodDataCharts = MutableStateFlow(emptyList<ChartData>())
     val currentPeriodDataCharts = _currentPeriodDataCharts.asStateFlow()
 
-    private var _selectedPeriodExpenses = MutableStateFlow(mapOf<String, List<Expense>>())
+    private val _selectedPeriodExpenses = MutableStateFlow(mapOf<String, List<Expense>>())
     val selectedPeriodExpenses = _selectedPeriodExpenses.asStateFlow()
 
-    private var _selectedPeriodDataCharts = MutableStateFlow(emptyList<ChartData>())
+    private val _selectedPeriodDataCharts = MutableStateFlow(emptyList<ChartData>())
     val selectedPeriodDataCharts = _selectedPeriodDataCharts.asStateFlow()
 
-    private var _loadingCurrentPeriodExpenses = MutableStateFlow(false)
+    private val _loadingCurrentPeriodExpenses = MutableStateFlow(false)
     val loadingCurrentPeriodExpenses = _loadingCurrentPeriodExpenses.asStateFlow()
 
-    private var _loadingSelectedPeriodExpenses = MutableStateFlow(false)
+    private val _loadingSelectedPeriodExpenses = MutableStateFlow(false)
     val loadingSelectedPeriodExpenses = _loadingSelectedPeriodExpenses.asStateFlow()
 
-    private var _currency = MutableStateFlow("")
+    private val _currency = MutableStateFlow("")
     val currency = _currency.asStateFlow()
 
-    private var _errorMessage = MutableStateFlow("")
+    private val _errorMessage = MutableStateFlow("")
     val errorMessage = _errorMessage.asStateFlow()
 
-    private var _isContinueEnabled = MutableStateFlow(false)
+    private val _isContinueEnabled = MutableStateFlow(false)
     val isContinueEnabled = _isContinueEnabled.asStateFlow()
 
     var monthExpanded by mutableStateOf(false)
@@ -96,7 +96,7 @@ class ChartsViewModel @Inject constructor(
                             _currentPeriodExpenses.emit(emptyMap())
                             _currentPeriodDataCharts.emit(emptyList())
                             _currency.emit(getCurrency(emptyList()))
-                            _errorMessage.emit("TThere are no recorded expenses for the current period.")
+                            _errorMessage.emit("There are no recorded expenses for the current period.")
                         }
 
                         else -> {

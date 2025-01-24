@@ -34,7 +34,7 @@ class ExpensesViewModel @Inject constructor(
     private val docNumber = MutableSharedFlow<String>()
     private val currency = MutableSharedFlow<String>()
 
-    private var _isSaveEnabled = MutableStateFlow(false)
+    private val _isSaveEnabled = MutableStateFlow(false)
     val isSaveEnabled = _isSaveEnabled.asStateFlow()
 
     init {
