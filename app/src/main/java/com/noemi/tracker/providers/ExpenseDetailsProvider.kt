@@ -25,13 +25,12 @@ object ExpenseDetailsProvider {
         val year = calendar.get(Calendar.YEAR)
         val yearRanges = (2024..2030).toMutableList()
         val index = yearRanges.indexOf(year)
-        if (index != -1) {
+        return if (index != -1) {
             val startRanges = yearRanges.subList(index, yearRanges.size)
             val endRanges = yearRanges.subList(0, index)
             startRanges.addAll(endRanges)
             return startRanges
-        }
-        return (2024..year).toList()
+        } else (2024..year).toList()
     }
 
     fun currentPeriod(): Pair<Int, String> {
