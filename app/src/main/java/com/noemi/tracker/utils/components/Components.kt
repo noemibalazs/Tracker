@@ -110,12 +110,18 @@ fun SmallHeadlineText(
     paddingStart: Int = 30,
     paddingEnd: Int = 0,
     paddingBottom: Int = 6,
+    paddingTop: Int = 0
 ) {
     Text(
         text = text,
         style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold),
         color = MaterialTheme.colorScheme.primary,
-        modifier = modifier.padding(start = paddingStart.dp, bottom = paddingBottom.dp, end = paddingEnd.dp)
+        modifier = modifier.padding(
+            start = paddingStart.dp,
+            bottom = paddingBottom.dp,
+            end = paddingEnd.dp,
+            top = paddingTop.dp
+        )
     )
 }
 

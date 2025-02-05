@@ -147,7 +147,8 @@ fun ChartsScreen(modifier: Modifier = Modifier) {
                             text = stringResource(id = R.string.label_selected_month_expenses),
                             paddingStart = 20,
                             paddingEnd = 20,
-                            paddingBottom = 0
+                            paddingBottom = 0,
+                            paddingTop = if (currentChartsData.size <= 1) 12 else 0
                         )
                     }
 
