@@ -9,7 +9,6 @@ import androidx.lifecycle.viewModelScope
 import com.noemi.tracker.model.Expense
 import com.noemi.tracker.repository.ExpensesRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import com.noemi.tracker.providers.ExpenseDetailsProvider.expensesTypes
@@ -27,12 +26,12 @@ class ExpensesViewModel @Inject constructor(
     private val expensesRepository: ExpensesRepository
 ) : ViewModel() {
 
-    private val expenseType = MutableSharedFlow<String>()
-    private val expenseMonth = MutableSharedFlow<String>()
-    private val expenseYear = MutableSharedFlow<Int>()
-    private val expenseCost = MutableSharedFlow<Double>()
-    private val docNumber = MutableSharedFlow<String>()
-    private val currency = MutableSharedFlow<String>()
+    private val expenseType = MutableStateFlow("")
+    private val expenseMonth = MutableStateFlow("")
+    private val expenseYear = MutableStateFlow(0)
+    private val expenseCost = MutableStateFlow(0.0)
+    private val docNumber = MutableStateFlow("")
+    private val currency = MutableStateFlow("")
 
     private val _isSaveEnabled = MutableStateFlow(false)
     val isSaveEnabled = _isSaveEnabled.asStateFlow()

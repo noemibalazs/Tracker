@@ -32,8 +32,8 @@ class ChartsViewModel @Inject constructor(
     private val selectedPeriodExpensesUseCase: SelectedPeriodExpensesUseCase
 ) : ViewModel() {
 
-    private val expenseMonth = MutableSharedFlow<String>()
-    private val expenseYear = MutableSharedFlow<Int>()
+    private val expenseMonth = MutableStateFlow("")
+    private val expenseYear = MutableStateFlow(0)
 
     private val _currentPeriodExpenses = MutableStateFlow(mapOf<String, List<Expense>>())
     val currentPeriodExpenses = _currentPeriodExpenses.asStateFlow()
